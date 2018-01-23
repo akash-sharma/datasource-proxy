@@ -1,0 +1,33 @@
+
+<button id="expandAll">expandAll</button>
+<button id="collapseAll">collapseAll</button>
+
+<head>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$( document ).ready(function() {
+       $("#expandAll").click(function(){
+          $(".operateAll").collapsible( "option", "collapsed", false );
+	   });
+	   $("#collapseAll").click(function(){
+          $(".operateAll").collapsible( "option", "collapsed", true );
+	   });
+    });
+</script>
+</head>
+
+<div>
+    <div class="operateAll" data-role="collapsible">
+		<h1>Query Type : SELECT, time taken : 1 ms </h1>
+		<p>
+		arguments : [[{1=39666533}]] 
+		sql query
+			<div class="operateAll" data-role="collapsible">
+				<h1>stack trace</h1>
+				<p>stack</p>
+			</div>
+		</p>
+    </div>
+</div>

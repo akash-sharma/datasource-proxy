@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (c) 2009 - 2012 hCentive Inc. All rights reserved.
+
+-->
+<configuration>
+	<contextName>datasource-proxy</contextName>
+	<jmxConfigurator />
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  		<file>logs/ERROR_FILE.log</file>
+  		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>logs/ERROR_FILE.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 10MB -->
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+    		<pattern>%X{clientRemoteAddress} %X{clientRemotehost} %date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="PERF_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  		<file>logs/PERF_FILE.html</file>
+  		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>logs/PERF_FILE.%d{yyyy-MM-dd}.%i.html</FileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 10MB -->
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+    		<pattern>%X{clientRemoteAddress} %X{clientRemotehost} %date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+  
+	<logger name="com.dsproxy.QueryCountFilter" additivity="false" level="INFO">
+		<appender-ref ref="PERF_FILE" />
+	</logger>
+
+	<root level="ERROR">
+    	<appender-ref ref="FILE" />
+	</root>
+	
+</configuration>

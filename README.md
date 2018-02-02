@@ -20,9 +20,9 @@ Add below dataSource proxy class with already created listener.
      ```           
 	<bean id="proxyDataSource" primary="true" class="net.ttddyy.dsproxy.support.ProxyDataSource">
 		<property name="dataSource" ref="yourDataSourceBean"/>
-		<property name="listener">
-			<bean class="com.dsproxy.DataSourceQueryCountListener">
-			</bean>
+			<property name="listener">
+				<bean class="com.dsproxy.DataSourceQueryCountListener">
+				</bean>
 		</property>
 	</bean>
 	```

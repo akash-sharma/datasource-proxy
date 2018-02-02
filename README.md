@@ -14,9 +14,9 @@ Steps :
 	</filter-mapping>
 	```
 	
-2)            
-Add below dataSource proxy class with already created listener.
+2) Add below dataSource proxy class with already created listener.
 (listener class is in provided in this project jar)
+
      ```           
 	<bean id="proxyDataSource" primary="true" class="net.ttddyy.dsproxy.support.ProxyDataSource">
 		<property name="dataSource" ref="yourDataSourceBean"/>

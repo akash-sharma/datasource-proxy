@@ -1,5 +1,6 @@
-How to monitor DB queries in a Spring web application using this project.
-Steps :
+#How to monitor DB queries in a Spring web application using this project.
+
+##Steps :
 
 1) Add below filter to your web.xml
 (filter class is in provided in this project jar)
